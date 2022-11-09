@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            Impersonate
+// @name            Impersonate SN User
 // @namespace       http://tampermonkey.net/
 // @description     Context menu to execute UserScript
 // @version         0.5
