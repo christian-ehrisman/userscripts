@@ -2,7 +2,7 @@
 // @name            Impersonate SN User
 // @namespace       http://tampermonkey.net/
 // @description     Context menu to execute UserScript
-// @version         0.8
+// @version         0.9
 // @author          author
 // @include         *
 // @grant           GM_registerMenuCommand
@@ -47,7 +47,7 @@
             }
         })
         updateName(name)
-        console.log('done')
+        console.log('x done')
     };
 
 
