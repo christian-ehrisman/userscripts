@@ -2,7 +2,7 @@
 // @name            Impersonate
 // @namespace       http://tampermonkey.net/
 // @description     Context menu to execute UserScript
-// @version         0.4
+// @version         0.5
 // @author          author
 // @downloadURL     https://github.com/christian-ehrisman/userscripts/raw/master/impersonateSn.user.js
 // @include         *
@@ -48,7 +48,7 @@
             }
         })
         updateName(name)
-        console.log('done')
+        console.log('all done')
     };
 
 
