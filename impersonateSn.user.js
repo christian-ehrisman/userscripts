@@ -2,7 +2,7 @@
 // @name            Impersonate SN User
 // @namespace       http://tampermonkey.net/
 // @description     Context menu to execute UserScript
-// @version         0.7
+// @version         0.8
 // @author          author
 // @include         *
 // @grant           GM_registerMenuCommand
@@ -33,7 +33,7 @@
             }
         })
         updateName(name)
-        console.log('all done')
+        console.log('y done')
     };
     function impersonateAdmin() {
         let name = "Christian Ehrisman(cje6.sa)"
