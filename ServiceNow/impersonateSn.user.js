@@ -4,6 +4,7 @@
 // @version         0.93
 // @author          Christian Ehrisman
 // @downloadURL     https://raw.githubusercontent.com/christian-ehrisman/userscripts/refs/heads/master/ServiceNow/impersonateSn.user.js
+// @match           https://*.service-now.com/*
 // @include         *
 // @grant           GM_registerMenuCommand
 // @grant           GM_xmlhttpRequest
