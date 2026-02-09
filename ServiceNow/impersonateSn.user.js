@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name            Impersonate SN User
-// @namespace       http://tampermonkey.net/
-// @description     Context menu to execute UserScript
-// @version         0.91
-// @author          author
+// @description     administrator impersonation script
+// @version         0.92
+// @author          Christian Ehrisman
+// @downloadURL 
 // @include         *
 // @grant           GM_registerMenuCommand
 // @grant           GM_xmlhttpRequest
