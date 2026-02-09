@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Impersonate SN User
 // @description     administrator impersonation script
-// @version         0.93
+// @version         0.94
 // @author          Christian Ehrisman
 // @downloadURL     https://raw.githubusercontent.com/christian-ehrisman/userscripts/refs/heads/master/ServiceNow/impersonateSn.user.js
 // @match           https://*.service-now.com/*
