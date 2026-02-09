@@ -2,10 +2,11 @@
 // ==UserScript==
 // @name     ServiceNow Fixes
 // @description Functionally equivalent to clicking the "Start" button on the time worked button right before hitting save/submit in ServiceNow. Does not interfere with other use of the time tracking fields
-// @version 1.6
+// @version 1.61
 // @match  https://*.service-now.com/*
 // @grant    GM_addStyle
 // @downloadURL https://github.com/christian-ehrisman/userscripts/raw/refs/heads/master/ServiceNow/ServiceNow_fixes.user.js
+// @author  Christian Ehrisman
 // ==/UserScript==
 
 // Get current time_worked value
