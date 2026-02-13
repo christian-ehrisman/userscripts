@@ -6,11 +6,11 @@
 
 /* Single-column layout, centered with padding */
 .main-container {
-    grid-template-columns: minmax(0, 756px) !important;
+    grid-template-columns: minmax(0, 975px) !important;
     justify-content: center !important;
 }
 
 /* Hide the sidebar (second grid child) */
-.main-container > :last-child:not(:first-child) {
+.main-container> :last-child:not(:first-child) {
     display: none !important;
 }
