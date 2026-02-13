@@ -1,19 +1,16 @@
 /* ==UserStyle==
 @name Reddit - Remove Sidebar & Center Content
+@match        https://*.sh.reddit.com/*
 @downloadURL https://raw.githubusercontent.com/christian-ehrisman/userscripts/refs/heads/master/Reddit/reddit-no-sidebar.user.css
 ==/UserStyle== */
 
-@-moz-document domain("sh.reddit.com") {
-    /* Single-column layout, centered with padding */
-    .main-container {
-        grid-template-columns: minmax(0, 1fr) !important;
-        max-width: 1200px;
-        margin-inline: auto;
-        padding-inline: 2rem;
-    }
+/* Single-column layout, centered with padding */
+.main-container {
+    grid-template-columns: minmax(0, 756px) !important;
+    justify-content: center !important;
+}
 
-    /* Hide the sidebar (second grid child) */
-    .main-container > :last-child:not(:first-child) {
-        display: none !important;
-    }
+/* Hide the sidebar (second grid child) */
+.main-container > :last-child:not(:first-child) {
+    display: none !important;
 }
