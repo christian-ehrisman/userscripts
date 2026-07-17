@@ -1,0 +1,7 @@
+{
+  "CsrfToken": "TEST_CSRF_TOKEN_12345",
+  "CtxsAuthId": "TEST_AUTH_ID_67890",
+  "CtxsDeviceId": "TEST_DEVICE_ID",
+  "ASP.NET_SessionId": "test_session_id",
+  "NSC_AAAC": "test_nsc_aaac"
+}
