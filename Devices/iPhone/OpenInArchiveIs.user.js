@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name         Archive.is - Open Newest
+// @namespace    https://github.com/christian-ehrisman/userscripts
 // @description  Open the newest archive.is snapshot of the current page
 // @match        *://*/*
-// @version      1.0
+// @version      1.1
 // @run-at       document-end
-// @grant        none
+// @grant        GM_xmlhttpRequest
+// @connect      archive.is
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
-    
+
     // Create floating button
     const button = document.createElement('button');
     button.innerHTML = '📦';
@@ -28,37 +30,40 @@
         z-index: 999999;
         box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     `;
-    
+
     button.addEventListener('click', openNewestArchive);
     document.body.appendChild(button);
-    
+
     function openNewestArchive() {
         const currentUrl = window.location.protocol + "//" + window.location.hostname + window.location.pathname;
         const archiveSearchUrl = "https://archive.is/" + encodeURI(currentUrl);
-        
+
         // Show loading state
         button.innerHTML = '⏳';
-        
-        fetch(archiveSearchUrl)
-            .then(r => r.text())
-            .then(html => {
+
+        // Use GM_xmlhttpRequest to bypass CORS restrictions on cross-origin
+        // requests to archive.is. The @connect archive.is declaration above
+        // grants the necessary host access in ScriptCAT.
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: archiveSearchUrl,
+            onload: function (res) {
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
+                const doc = parser.parseFromString(res.responseText, 'text/html');
                 const newestLink = doc.querySelector('.TEXT-BLOCK a[href^="/"]');
-                
+
                 if (newestLink) {
                     window.location.href = "https://archive.is" + newestLink.getAttribute('href');
                 } else {
                     window.location.href = archiveSearchUrl;
                 }
-            })
-            .catch(() => {
+            },
+            onerror: function () {
                 window.location.href = archiveSearchUrl;
-            })
-            .finally(() => {
-                button.innerHTML = '📦';
-            });
+            },
+            ontimeout: function () {
+                window.location.href = archiveSearchUrl;
+            }
+        });
     }
 })();
-
-

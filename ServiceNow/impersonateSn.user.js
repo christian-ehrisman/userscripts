@@ -1,14 +1,17 @@
 // ==UserScript==
 // @name            Impersonate SN User
+// @namespace       https://github.com/christian-ehrisman/userscripts
 // @description     administrator impersonation script
 // @version         0.94
 // @author          Christian Ehrisman
 // @downloadURL     https://raw.githubusercontent.com/christian-ehrisman/userscripts/refs/heads/master/ServiceNow/impersonateSn.user.js
+// @updateURL       https://raw.githubusercontent.com/christian-ehrisman/userscripts/refs/heads/master/ServiceNow/impersonateSn.user.js
 // @match           https://*.service-now.com/*
-// @include         *
+// @run-at          document-idle
 // @grant           GM_registerMenuCommand
 // @grant           GM_xmlhttpRequest
 // @grant           unsafeWindow
+// @connect         duke.service-now.com
 // ==/UserScript==
 
 (function () {
@@ -30,7 +33,7 @@
             method: "POST",
             url: "https://duke.service-now.com/api/now/ui/impersonate/" + cje,
             headers: {
-                "X-UserToken": g_ck,
+                "X-UserToken": unsafeWindow.g_ck,
             }
         })
         updateName(name)
@@ -44,7 +47,7 @@
             method: "POST",
             url: "https://duke.service-now.com/api/now/ui/impersonate/" + admin,
             headers: {
-                "X-UserToken": g_ck,
+                "X-UserToken": unsafeWindow.g_ck,
             }
         })
         updateName(name)

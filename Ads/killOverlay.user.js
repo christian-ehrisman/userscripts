@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        Kill Sticky
-// @namespace   Violentmonkey Scripts
+// @namespace   https://github.com/christian-ehrisman/userscripts
 // @match       https://medium.com/
+// @run-at      document-idle
 // @grant       none
 // @version     1.0
 // @author      -
-// @description 2/13/2023, 2:58:47 PM
-// @grant addStyle
+// @description 2/13/2023, 2:58:47 PM
 // ==/UserScript==
 (function () {
     document.querySelectorAll("body *").forEach(function (node) {
@@ -30,4 +30,4 @@
     htmlNode.style["overflow"] = "visible";
     htmlNode.style["overflow-x"] = "visible";
     htmlNode.style["overflow-y"] = "visible";
-})
+})();
